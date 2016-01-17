@@ -12,7 +12,9 @@ import lyons.db.DbConn;
 import lyons.entity.User;
 import lyons.entity.UserInfo;
 
-
+/**
+ * æ•°æ®åº“æ“ä½œç±»
+ * /
 public class UserDao
 {
 	Connection  	  conn = null;
@@ -20,13 +22,13 @@ public class UserDao
 	PreparedStatement pstmt = null;
 	
 	/*
-	 * ÑéÖ¤ÓÃ»§µÇÂ¼
+	 * éªŒè¯ç”¨æˆ·ç™»å½•
 	 */
 	public boolean login(User user)
 	{
 		boolean flagLogin = false;
 		conn = DbConn.getConn();									
-		String sql = "SELECT * FROM SALESMAN WHERE SNAME=? AND SPASSWORD=?";  //ÒıÓÃsaleman±í Êı¾İ¿âºÜÀëÆæ¡£µ±Ç°´´½¨±íµÄ¾Í²»ĞĞ£¬²»Ã÷Ô­Òò£¡ 
+		String sql = "SELECT * FROM SALESMAN WHERE SNAME=? AND SPASSWORD=?";  //å¼•ç”¨salemanè¡¨ æ•°æ®åº“å¾ˆç¦»å¥‡ã€‚å½“å‰åˆ›å»ºè¡¨çš„å°±ä¸è¡Œï¼Œä¸æ˜åŸå› ï¼//å¯èƒ½æ˜¯çº¯ç²¹oracleçš„åŸå›  
 		
 		try
 		{
@@ -51,7 +53,7 @@ public class UserDao
 	}
 	
 	/*
-	 * Â¼Èë»áÔ±ĞÅÏ¢
+	 * å½•å…¥ä¼šå‘˜ä¿¡æ¯
 	 */
 	public boolean addMember(UserInfo userInfo)
 	{
@@ -89,7 +91,7 @@ public class UserDao
 	}
 	
 	/*
-	 * ²é¿´Ñ§ÉúĞÅÏ¢
+	 * æŸ¥çœ‹å­¦ç”Ÿä¿¡æ¯
 	 */
 	public ArrayList<UserInfo> queryMemberInfo()
 	{
@@ -111,12 +113,12 @@ public class UserDao
 				String[] courses = {""};
 					if (rs.getString(6) != null)
 					{
-						courses = rs.getString(6).split("&"); //½«×Ö·û´®·Ö¸îÊ¢µ½Êı×éÖĞÈ¥
+						courses = rs.getString(6).split("&"); //å°†å­—ç¬¦ä¸²åˆ†å‰²ç››åˆ°æ•°ç»„ä¸­å»
 					}
 				String[] hobbys = {""};
 					if (rs.getString(7) != null)
 					{
-						hobbys = rs.getString(7).split("&"); //½«×Ö·û´®·Ö¸îÊ¢µ½Êı×éÖĞÈ¥  ºÜ²»Àí½â£¬È¡³öµÄString×ª³ÉString[]´æ´¢,ÏÔÊ¾Ê±È´ÓÃstring¡£
+						hobbys = rs.getString(7).split("&"); //å°†å­—ç¬¦ä¸²åˆ†å‰²ç››åˆ°æ•°ç»„ä¸­å»  å–å‡ºçš„Stringè½¬æˆString[]å­˜å‚¨,æ˜¾ç¤ºæ—¶ç”¨stringï¼ˆåœ¨å®ä½“ç±»ä¸­è¿›è¡Œäº†è½¬æ¢ï¼‰ã€‚
 					}
 				
 				String remarks = rs.getString(8);
@@ -137,7 +139,7 @@ public class UserDao
 	}
 	
 	/*
-	 * ĞŞ¸Ä»áÔ±ĞÅÏ¢
+	 * ä¿®æ”¹ä¼šå‘˜ä¿¡æ¯
 	 */
 	public boolean modifyMember(UserInfo userInfo)
 	{
@@ -171,7 +173,7 @@ public class UserDao
 	}
 	
 	/*
-	 * É¾³ı»áÔ±ĞÅÏ¢
+	 * åˆ é™¤ä¼šå‘˜ä¿¡æ¯
 	 */
 	public boolean deleteMember(int userId)
 	{
