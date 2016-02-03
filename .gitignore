@@ -68,7 +68,8 @@ $RECYCLE.BIN/
 .project
 .gitattributes
 *.class
+.mymetadata
     
     # sql #
-*~
+*~sql
 
