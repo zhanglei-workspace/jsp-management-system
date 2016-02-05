@@ -61,7 +61,18 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-    
+         # target #
+.metadata
+.settings
+.classpath
+.project
+.gitattributes
+*.class
+
+
+# Generated files #
+bin/
+
     # sql #
 *~sql
 
